@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B3C44F7227EE260D00461EE0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F7127EE260D00461EE0 /* main.swift */; };
+		B3C44F7C27EE607200461EE0 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = B3C44F7B27EE607200461EE0 /* CodableCSV */; };
+		B3C44F8927EE64C400461EE0 /* IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8827EE64C400461EE0 /* IO.swift */; };
+		B3C44F8C27EE654A00461EE0 /* Fangraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8B27EE654A00461EE0 /* Fangraphs.swift */; };
+		B3C44F8E27EE656C00461EE0 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8D27EE656C00461EE0 /* Teams.swift */; };
+		B3C44F9027EE659A00461EE0 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8F27EE659A00461EE0 /* FileManager.swift */; };
+		B3C44F9227EE65D800461EE0 /* TempPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F9127EE65D800461EE0 /* TempPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +31,11 @@
 /* Begin PBXFileReference section */
 		B3C44F6E27EE260D00461EE0 /* TRPKeysGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TRPKeysGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C44F7127EE260D00461EE0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B3C44F8827EE64C400461EE0 /* IO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IO.swift; sourceTree = "<group>"; };
+		B3C44F8B27EE654A00461EE0 /* Fangraphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fangraphs.swift; sourceTree = "<group>"; };
+		B3C44F8D27EE656C00461EE0 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
+		B3C44F8F27EE659A00461EE0 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		B3C44F9127EE65D800461EE0 /* TempPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C44F7C27EE607200461EE0 /* CodableCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,9 +69,30 @@
 		B3C44F7027EE260D00461EE0 /* TRPKeysGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				B3C44F8A27EE653F00461EE0 /* Models */,
+				B3C44F8727EE64B900461EE0 /* IO */,
 				B3C44F7127EE260D00461EE0 /* main.swift */,
 			);
 			path = TRPKeysGenerator;
+			sourceTree = "<group>";
+		};
+		B3C44F8727EE64B900461EE0 /* IO */ = {
+			isa = PBXGroup;
+			children = (
+				B3C44F8827EE64C400461EE0 /* IO.swift */,
+				B3C44F8F27EE659A00461EE0 /* FileManager.swift */,
+			);
+			path = IO;
+			sourceTree = "<group>";
+		};
+		B3C44F8A27EE653F00461EE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3C44F8B27EE654A00461EE0 /* Fangraphs.swift */,
+				B3C44F8D27EE656C00461EE0 /* Teams.swift */,
+				B3C44F9127EE65D800461EE0 /* TempPlayer.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +111,9 @@
 			dependencies = (
 			);
 			name = TRPKeysGenerator;
+			packageProductDependencies = (
+				B3C44F7B27EE607200461EE0 /* CodableCSV */,
+			);
 			productName = TRPKeysGenerator;
 			productReference = B3C44F6E27EE260D00461EE0 /* TRPKeysGenerator */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +142,9 @@
 				Base,
 			);
 			mainGroup = B3C44F6527EE260D00461EE0;
+			packageReferences = (
+				B3C44F7A27EE607200461EE0 /* XCRemoteSwiftPackageReference "CodableCSV" */,
+			);
 			productRefGroup = B3C44F6F27EE260D00461EE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -120,7 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C44F9027EE659A00461EE0 /* FileManager.swift in Sources */,
+				B3C44F8E27EE656C00461EE0 /* Teams.swift in Sources */,
+				B3C44F9227EE65D800461EE0 /* TempPlayer.swift in Sources */,
 				B3C44F7227EE260D00461EE0 /* main.swift in Sources */,
+				B3C44F8927EE64C400461EE0 /* IO.swift in Sources */,
+				B3C44F8C27EE654A00461EE0 /* Fangraphs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +328,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B3C44F7A27EE607200461EE0 /* XCRemoteSwiftPackageReference "CodableCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dehesa/CodableCSV.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3C44F7B27EE607200461EE0 /* CodableCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3C44F7A27EE607200461EE0 /* XCRemoteSwiftPackageReference "CodableCSV" */;
+			productName = CodableCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3C44F6627EE260D00461EE0 /* Project object */;
 }
