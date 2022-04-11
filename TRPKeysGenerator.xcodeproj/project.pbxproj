@@ -29,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		25AC51042803ED9D00FE0EC6 /* atcPitchers.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = atcPitchers.csv; sourceTree = "<group>"; };
+		25AC51052803ED9D00FE0EC6 /* atcHitters.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = atcHitters.csv; sourceTree = "<group>"; };
 		B3C44F6E27EE260D00461EE0 /* TRPKeysGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TRPKeysGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C44F7127EE260D00461EE0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B3C44F8827EE64C400461EE0 /* IO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IO.swift; sourceTree = "<group>"; };
@@ -50,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25AC51032803ED6600FE0EC6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				25AC51052803ED9D00FE0EC6 /* atcHitters.csv */,
+				25AC51042803ED9D00FE0EC6 /* atcPitchers.csv */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B3C44F6527EE260D00461EE0 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +80,7 @@
 		B3C44F7027EE260D00461EE0 /* TRPKeysGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				25AC51032803ED6600FE0EC6 /* Resources */,
 				B3C44F8A27EE653F00461EE0 /* Models */,
 				B3C44F8727EE64B900461EE0 /* IO */,
 				B3C44F7127EE260D00461EE0 /* main.swift */,
