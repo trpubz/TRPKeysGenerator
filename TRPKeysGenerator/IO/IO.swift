@@ -1,7 +1,7 @@
 //
 //  IO.swift
 //  TRPKeysGenerator
-//
+//  Houses the IO objects and logic to load/read csvs and json
 //  Created by Taylor Pubins on 3/25/22.
 //
 
@@ -9,7 +9,10 @@ import Foundation
 import CodableCSV
 
 class IO {
-    private var decoder = CSVDecoder { $0.headerStrategy = .firstLine }
+    private var decoder = CSVDecoder {
+        $0.headerStrategy = .firstLine
+        $0.delimiters.row = "\n"
+    }
     
     func writeKeys(keys: [TempPlayer]) {
         let encoder: JSONEncoder = JSONEncoder()
@@ -22,44 +25,20 @@ class IO {
     }
 }
 
-// MARK: - Load Pitchers
+// MARK: - Load FG Pitchers
 extension IO {
-    func createFGPitchers() -> [FangraphsPlayer] {
+    func createFGPitchers(from url: URL) -> [FangraphsPlayer] {
         do {
-            return try decoder.decode([FangraphsPlayer].self, from: FileManager.urlATCPitchers)
-        } catch { fatalError("createFGHitters \(error)")}
-    }
-    
-    func readerPitchers() -> CSVReader {
-        do {
-            let result = try CSVReader(input: FileManager.urlATCPitchers) {
-                $0.encoding = .utf8
-                $0.delimiters.row = "\r\n"
-                $0.headerStrategy = .firstLine
-                $0.trimStrategy = .whitespaces
-            }
-            return result
-        } catch { fatalError("error with loadHitters \(error)") }
+            return try decoder.decode([FangraphsPlayer].self, from: url)
+        } catch { fatalError("createFGPitchers \(error)")}
     }
 }
-// MARK: - Load Hitters
+// MARK: - Load FG Hitters
 extension IO {
     /// Hitters from Fangraphs projections
-    func readerHitters() -> CSVReader {
+    func createFGHitters(from url: URL) -> [FangraphsPlayer] {
         do {
-            let reader = try CSVReader(input: FileManager.urlATCHitters) {
-                $0.encoding = .utf8
-                $0.delimiters.row = "\r\n"
-                $0.headerStrategy = .firstLine
-                $0.trimStrategy = .whitespaces
-            }
-            return reader
-        } catch { fatalError("error with loadHitters \(error)") }
-    }
-    
-    func createFGHitters() -> [FangraphsPlayer] {
-        do {
-            return try decoder.decode([FangraphsPlayer].self, from: FileManager.urlATCHitters)
+            return try decoder.decode([FangraphsPlayer].self, from: url)
         } catch { fatalError("createFGHitters \(error)")}
     }
 }

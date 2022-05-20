@@ -8,9 +8,11 @@
 import Foundation
 
 enum TeamConversion {
-    /*
-     Converts fangraphs
-     */
+
+    /// Converts fangraphs team to EPSN team
+    /// - parameter tm: the Fangraphs team string from Fangraphs csv
+    /// - returns String representation of ESPN Universe Team ID
+    
     static func convert(tm: String) -> String {
         switch tm {
         case "CHW": return "CWS"
@@ -23,4 +25,6 @@ enum TeamConversion {
         }
 //        return tm
     }
+    
+    // TODO: create conversion for Savant teams
 }
