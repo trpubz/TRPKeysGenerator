@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3978E6A283895950054CF76 /* Savant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3978E69283895950054CF76 /* Savant.swift */; };
 		B3C44F7227EE260D00461EE0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F7127EE260D00461EE0 /* main.swift */; };
 		B3C44F7C27EE607200461EE0 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = B3C44F7B27EE607200461EE0 /* CodableCSV */; };
 		B3C44F8927EE64C400461EE0 /* IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8827EE64C400461EE0 /* IO.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		25AC51042803ED9D00FE0EC6 /* atcPitchers.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = atcPitchers.csv; sourceTree = "<group>"; };
 		25AC51052803ED9D00FE0EC6 /* atcHitters.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = atcHitters.csv; sourceTree = "<group>"; };
+		B3978E69283895950054CF76 /* Savant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Savant.swift; sourceTree = "<group>"; };
 		B3C44F6E27EE260D00461EE0 /* TRPKeysGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TRPKeysGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C44F7127EE260D00461EE0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B3C44F8827EE64C400461EE0 /* IO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IO.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				B3C44F8B27EE654A00461EE0 /* Fangraphs.swift */,
 				B3C44F8D27EE656C00461EE0 /* Teams.swift */,
 				B3C44F9127EE65D800461EE0 /* TempPlayer.swift */,
+				B3978E69283895950054CF76 /* Savant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3978E6A283895950054CF76 /* Savant.swift in Sources */,
 				B3C44F9027EE659A00461EE0 /* FileManager.swift in Sources */,
 				B3C44F8E27EE656C00461EE0 /* Teams.swift in Sources */,
 				B3C44F9227EE65D800461EE0 /* TempPlayer.swift in Sources */,

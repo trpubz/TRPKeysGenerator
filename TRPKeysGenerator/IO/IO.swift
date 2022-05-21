@@ -25,21 +25,30 @@ class IO {
     }
 }
 
-// MARK: - Load FG Pitchers
+// MARK: - Load FG
 extension IO {
+    func createFGHitters(from url: URL) -> [FangraphsPlayer] {
+        do {
+            return try decoder.decode([FangraphsPlayer].self, from: url)
+        } catch { fatalError("createFGHitters \(error)")}
+    }
     func createFGPitchers(from url: URL) -> [FangraphsPlayer] {
         do {
             return try decoder.decode([FangraphsPlayer].self, from: url)
         } catch { fatalError("createFGPitchers \(error)")}
     }
 }
-// MARK: - Load FG Hitters
+// MARK: - Load Savant
 extension IO {
-    /// Hitters from Fangraphs projections
-    func createFGHitters(from url: URL) -> [FangraphsPlayer] {
+    func createSavantHitters(from url: URL) -> [SavantPlayer] {
         do {
-            return try decoder.decode([FangraphsPlayer].self, from: url)
-        } catch { fatalError("createFGHitters \(error)")}
+            return try decoder.decode([SavantPlayer].self, from: url)
+        } catch { fatalError("createSavantHitters \(error)")}
+    }
+    func createSavantPitchers(from url: URL) -> [SavantPlayer] {
+        do {
+            return try decoder.decode([SavantPlayer].self, from: url)
+        } catch { fatalError("createSavantPitchers \(error)")}
     }
 }
 

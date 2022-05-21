@@ -37,10 +37,10 @@ class TempPlayer: Codable {
 }
 
 extension TempPlayer {
-    /// Finds a match against self and sets the idFangraphs property if present
+    /// Finds a FG match against self and sets the idFangraphs property if present
     /// - parameter players: Takes an array of FangraphsPlayer s
-    /// - returns: An optional string representing the player's Fangraphs playerid and/or self
-    func findMatch(players: [FangraphsPlayer]) -> (fgid: String?, plyr: TempPlayer?) {
+    /// - returns: a tuple of an optional string representing the player's Fangraphs playerid and/or self
+    func findFGMatch(players: [FangraphsPlayer]) -> (fgid: String?, plyr: TempPlayer?) {
         // Filter matches on last name first; will sometimes find multiple matches
         var matches: [FangraphsPlayer] = players.filter({$0.lastName == self.lastName})
         if matches.isEmpty {
@@ -64,6 +64,41 @@ extension TempPlayer {
                 return (self.idFangraphs, nil)
             } else if matches.count > 1 {
                 print("still multiple matches...re-evaluate filtering logic")
+            }
+        }
+        return (nil, nil)
+    }
+    
+    /// Finds a Savant match against self and sets the idSavant property if present
+    /// - parameter players: Takes an array of SavantPlayer s
+    /// - returns: a tuple of an optional string representing the player's Savant playerid and/or self
+    func findSavantMatch(players: [SavantPlayer]) -> (idSavant: String?, plyr: TempPlayer?) {
+        // Filter matches on last name first; will sometimes find multiple matches
+        var matches: [SavantPlayer] = players.filter({$0.lastName == self.lastName})
+        if matches.isEmpty {
+            print("\(self._name) exists in the ESPN world but not in the Statcast Data")
+            return (nil, self)
+        }
+        
+        // If only 1 match, then found our guy
+        if matches.count == 1 {
+            self.idSavant = matches.first!.playerid
+            return (self.idSavant, nil)
+        } else if matches.count > 1 {
+            // Next filter is on the first name
+            matches = matches.filter({$0.firstName == self.firstName})
+            if matches.count == 1 {
+                self.idSavant = matches.first!.playerid
+                return (self.idSavant, nil)
+            } else if matches.count > 1 {
+                if self.suffix != nil {
+                    self.idSavant = matches.filter({$0.suffix == self.suffix}).first!.playerid
+                    return (self.idSavant, nil)
+                } else {
+                    print("espn player: \n\(self._name)")
+                    matches.forEach({print($0.firstName + " " + $0.lastName)})
+                    print("still multiple matches...re-evaluate filtering logic")
+                }
             }
         }
         return (nil, nil)

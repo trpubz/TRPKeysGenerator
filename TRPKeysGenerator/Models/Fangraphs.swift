@@ -36,7 +36,6 @@ extension FangraphsPlayer {
     enum CodingKeys: String, CodingKey {
         case name = "Name"
         case tm = "Team"
-        // since playerid is the last csv column the new line character is present
         case playerid = "playerid"
     }
 }
