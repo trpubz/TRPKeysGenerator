@@ -82,10 +82,10 @@
 		B3C44F7027EE260D00461EE0 /* TRPKeysGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				25AC51032803ED6600FE0EC6 /* Resources */,
-				B3C44F8A27EE653F00461EE0 /* Models */,
-				B3C44F8727EE64B900461EE0 /* IO */,
 				B3C44F7127EE260D00461EE0 /* main.swift */,
+				B3C44F8727EE64B900461EE0 /* IO */,
+				B3C44F8A27EE653F00461EE0 /* Models */,
+				25AC51032803ED6600FE0EC6 /* Resources */,
 			);
 			path = TRPKeysGenerator;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					B3C44F6D27EE260D00461EE0 = {
 						CreatedOnToolsVersion = 13.3;
@@ -303,6 +303,7 @@
 		B3C44F7627EE260D00461EE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AJ5NZESYF;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -314,6 +315,7 @@
 		B3C44F7727EE260D00461EE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5AJ5NZESYF;
 				ENABLE_HARDENED_RUNTIME = YES;
