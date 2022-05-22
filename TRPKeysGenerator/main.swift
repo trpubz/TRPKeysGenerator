@@ -31,12 +31,12 @@ for p in tempPlayers {
     //print(p.name + " " + p.idFangraphs!)
 }
 // -MARK: Savant
-// load Savant Hitters
-var savantHitters: [SavantPlayer] = io.createSavantHitters(from: FileManager.urlSavantBat)
-//load Savant Pitchers
-var savantPitchers: [SavantPlayer] = io.createSavantPitchers(from: FileManager.urlSavantPit)
+//// load Savant Hitters
+//var savantHitters: [SavantPlayer] = io.createSavantHitters(from: FileManager.urlSavantBat)
+////load Savant Pitchers
+//var savantPitchers: [SavantPlayer] = io.createSavantPitchers(from: FileManager.urlSavantPit)
 //combine pos groups into players mega group
-var savantPlayers: [SavantPlayer] = savantHitters + savantPitchers
+var savantPlayers: [SavantPlayer] = io.createSavantPlayers(from: FileManager.urlSavant)
 //find matches--add fangraphs playerid to TempPlayer--pop match from appropriate array
 for p in tempPlayers {
     guard let match: String = p.findSavantMatch(players: savantPlayers).idSavant else {

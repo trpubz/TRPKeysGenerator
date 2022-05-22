@@ -91,14 +91,15 @@ extension TempPlayer {
                 self.idSavant = matches.first!.playerid
                 return (self.idSavant, nil)
             } else if matches.count > 1 {
-                if self.suffix != nil {
-                    self.idSavant = matches.filter({$0.suffix == self.suffix}).first!.playerid
-                    return (self.idSavant, nil)
-                } else {
-                    print("espn player: \n\(self._name)")
-                    matches.forEach({print($0.firstName + " " + $0.lastName)})
-                    print("still multiple matches...re-evaluate filtering logic")
+                // Next filter by team
+                if matches.count == 1 {
+                    self.idSavant = matches.first(where: {$0.tm == self.tm})!.playerid
+                    return (self.idFangraphs, nil)
                 }
+            } else {
+                print("espn player: \n\(self._name)")
+                matches.forEach({print($0.firstName + " " + $0.lastName)})
+                print("still multiple matches...re-evaluate filtering logic")
             }
         }
         return (nil, nil)

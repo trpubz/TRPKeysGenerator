@@ -40,12 +40,20 @@ extension IO {
 }
 // MARK: - Load Savant
 extension IO {
-    func createSavantHitters(from url: URL) -> [SavantPlayer] {
-        do {
-            return try decoder.decode([SavantPlayer].self, from: url)
-        } catch { fatalError("createSavantHitters \(error)")}
-    }
-    func createSavantPitchers(from url: URL) -> [SavantPlayer] {
+//    func createSavantHitters(from url: URL) -> [SavantPlayer] {
+//        do {
+//            return try decoder.decode([SavantPlayer].self, from: url)
+//        } catch { fatalError("createSavantHitters \(error)")}
+//    }
+//    
+//    func createSavantPitchers(from url: URL) -> [SavantPlayer] {
+//        do {
+//            return try decoder.decode([SavantPlayer].self, from: url)
+//        } catch { fatalError("createSavantPitchers \(error)")}
+//    }
+    
+    func createSavantPlayers(from url: URL) -> [SavantPlayer] {
+        self.decoder.delimiters.row = "\r\n"
         do {
             return try decoder.decode([SavantPlayer].self, from: url)
         } catch { fatalError("createSavantPitchers \(error)")}

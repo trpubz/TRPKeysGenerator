@@ -17,6 +17,7 @@ struct FileManager {
     private static let csvSteamerrPit: String = "steamerr_pit.csv"
     private static let csvSavantBat: String = "expected_statistics_bat.csv"
     private static let csvSavantPit: String = "expected_statistics_pit.csv"
+    private static let csvSavant: String = "PLAYERIDMAP.csv"
     
     static let dirBaseballHQ: URL = URL(fileURLWithPath: "/Users/Shared/BaseballHQ/", isDirectory: true)
     static let dirPreSeason: URL = URL(fileURLWithPath: "/Users/Shared/BaseballHQ/preseason/", isDirectory: true)
@@ -29,5 +30,6 @@ struct FileManager {
     static let urlSteamerrPit: URL = dirRegSeason.appendingPathComponent(csvSteamerrPit)
     static let urlSavantBat: URL = dirRegSeason.appendingPathComponent(csvSavantBat)
     static let urlSavantPit: URL = dirRegSeason.appendingPathComponent(csvSavantPit)
+    static let urlSavant: URL = dirBaseballHQ.appendingPathComponent(csvSavant)
     static let urlKeysTRP: URL = dirBaseballHQ.appendingPathComponent(keysTRP)
 }

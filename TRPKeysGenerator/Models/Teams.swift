@@ -21,6 +21,8 @@ enum TeamConversion {
         case "SFG": return "SF"
         case "TBR": return "TB"
         case "WSN": return "WSH"
+            
+        case "N/A": return "FA"
         default: return tm
         }
 //        return tm
