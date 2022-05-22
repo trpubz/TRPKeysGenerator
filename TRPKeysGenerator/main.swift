@@ -20,14 +20,14 @@ var fangraphsPitchers: [FangraphsPlayer] = io.createFGPitchers(from: FileManager
 var fangraphsPlayers: [FangraphsPlayer] = fangraphsHitters + fangraphsPitchers
 //find matches--add fangraphs playerid to TempPlayer--pop match from appropriate array
 for p in tempPlayers {
-    guard let match: String = p.findFGMatch(players: fangraphsPlayers).fgid else {
+    guard let matchID: String = p.findFGMatch(players: fangraphsPlayers).fgid else {
         // if the player exists on ESPN but not on FG projections, the player needs to be shed.
         tempPlayers.removeAll(where: {$0.idESPN == p.idESPN})
-        print("removed \(p._name) for non-existence")
+        print("removed \(p._name) from ESPN Universe for non-existence in Fangraphs Universe")
         continue
     }
     // if there is a match, make the matchable list shorter by popping match
-    fangraphsPlayers.removeAll(where: {$0.playerid == match})
+    fangraphsPlayers.removeAll(where: {$0.playerid == matchID})
     //print(p.name + " " + p.idFangraphs!)
 }
 // -MARK: Savant
@@ -39,14 +39,14 @@ for p in tempPlayers {
 var savantPlayers: [SavantPlayer] = io.createSavantPlayers(from: FileManager.urlSavant)
 //find matches--add fangraphs playerid to TempPlayer--pop match from appropriate array
 for p in tempPlayers {
-    guard let match: String = p.findSavantMatch(players: savantPlayers).idSavant else {
+    guard let matchID: String = p.findSavantMatch(players: savantPlayers).idSavant else {
         // if the player exists on ESPN but not on FG projections, the player needs to be shed.
         tempPlayers.removeAll(where: {$0.idESPN == p.idESPN})
-        print("removed \(p._name) for non-existence")
+        print("removed \(p._name) from ESPN Universe for non-existence Savant Universe")
         continue
     }
     // if there is a match, make the matchable list shorter by popping match
-    savantPlayers.removeAll(where: {$0.playerid == match})
+    savantPlayers.removeAll(where: {$0.playerid == matchID})
     //print(p.name + " " + p.idFangraphs!)
 }
 
