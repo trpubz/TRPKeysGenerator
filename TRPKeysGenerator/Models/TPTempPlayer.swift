@@ -8,7 +8,7 @@
 import Foundation
 import AppKit
 
-class TempPlayer: Codable {
+class TPTempPlayer: Codable {
     let _name: String
     let idESPN: String
     private var _idFangraphs: String? = nil
@@ -36,13 +36,13 @@ class TempPlayer: Codable {
     let pos: String
 }
 
-extension TempPlayer {
+extension TPTempPlayer {
     /// Finds a FG match against self and sets the idFangraphs property if present
     /// - parameter players: Takes an array of FangraphsPlayer s
     /// - returns: a tuple of an optional string representing the player's Fangraphs playerid and/or self
-    func findFGMatch(players: [FangraphsPlayer]) -> (fgid: String?, plyr: TempPlayer?) {
+    func findFGMatch(players: [TPFangraphsPlayer]) -> (fgid: String?, plyr: TPTempPlayer?) {
         // Filter matches on last name first; will sometimes find multiple matches
-        var matches: [FangraphsPlayer] = players.filter({$0.lastName == self.lastName})
+        var matches: [TPFangraphsPlayer] = findTPMatchesLastName(players: players) as! [TPFangraphsPlayer]
         if matches.isEmpty {
             print("\(self._name) exists in the ESPN world but not in the Fangraphs Projections")
             return (nil, self)
@@ -54,7 +54,7 @@ extension TempPlayer {
             return (self.idFangraphs, nil)
         } else if matches.count > 1 {
             // Next filter will be on the first 2 letters
-            matches = matches.filter({$0.firstName.prefix(2) == self.firstName.prefix(2)})
+            matches = findTPMatchesFirstName(players: matches) as! [TPFangraphsPlayer]
             if matches.count == 1 {
                 self.idFangraphs = matches.first!.playerid
                 return (self.idFangraphs, nil)
@@ -72,9 +72,9 @@ extension TempPlayer {
     /// Finds a Savant match against self and sets the idSavant property if present
     /// - parameter players: Takes an array of SavantPlayer s
     /// - returns: a tuple of an optional string representing the player's Savant playerid and/or self
-    func findSavantMatch(players: [SavantPlayer]) -> (idSavant: String?, plyr: TempPlayer?) {
+    func findSavantMatch(players: [TPSavantPlayer]) -> (idSavant: String?, plyr: TPTempPlayer?) {
         // Filter matches on last name first; will sometimes find multiple matches
-        var matches: [SavantPlayer] = players.filter({$0.lastName == self.lastName})
+        var matches: [TPSavantPlayer] = findTPMatchesLastName(players: players) as! [TPSavantPlayer]
         if matches.isEmpty {
             print("\(self._name) exists in the ESPN world but not in the Statcast Data")
             return (nil, self)
@@ -86,13 +86,13 @@ extension TempPlayer {
             return (self.idSavant, nil)
         } else if matches.count > 1 {
             // Next filter is on the first name
-            matches = matches.filter({$0.firstName == self.firstName})
+            matches = findTPMatchesFirstName(players: matches) as! [TPSavantPlayer]
             if matches.count == 1 {
                 self.idSavant = matches.first!.playerid
                 return (self.idSavant, nil)
             } else if matches.count > 1 {
                 // Next filter by team
-                if matches.count == 1 {
+                if matches.count > 1 {
                     self.idSavant = matches.first(where: {$0.tm == self.tm})!.playerid
                     return (self.idFangraphs, nil)
                 }
@@ -106,7 +106,19 @@ extension TempPlayer {
     }
 }
 
-extension TempPlayer {
+extension TPTempPlayer {
+    
+    private func findTPMatchesLastName(players: [TPExtPlayer]) -> [TPExtPlayer] {
+        return players.filter({$0.lastName == self.lastName})
+    }
+    
+    private func findTPMatchesFirstName(players: [TPExtPlayer]) -> [TPExtPlayer] {
+        return players.filter({$0.firstName.prefix(2) == self.firstName.prefix(2)})
+    }
+    
+}
+
+extension TPTempPlayer {
     private enum CodingKeys: String, CodingKey {
         case idESPN, _name, firstName, lastName, suffix, tm, pos
         case _idFangraphs = "idFangraphs"

@@ -10,14 +10,14 @@ import Foundation
 let io = IO()
 
 //load ESPN json players
-var tempPlayers: [TempPlayer] = io.loadESPNPlayers()
+var tempPlayers: [TPTempPlayer] = io.loadESPNPlayers()
 // -MARK: FG
     //load FG Hitters
-var fangraphsHitters: [FangraphsPlayer] = io.createFGHitters(from: FileManager.urlSteamerrBat)
+var fangraphsHitters: [TPFangraphsPlayer] = io.createFGHitters(from: FileManager.urlSteamerrBat)
 //load FG Pitchers
-var fangraphsPitchers: [FangraphsPlayer] = io.createFGPitchers(from: FileManager.urlSteamerrPit)
+var fangraphsPitchers: [TPFangraphsPlayer] = io.createFGPitchers(from: FileManager.urlSteamerrPit)
 //combine pos groups into players mega group
-var fangraphsPlayers: [FangraphsPlayer] = fangraphsHitters + fangraphsPitchers
+var fangraphsPlayers: [TPFangraphsPlayer] = fangraphsHitters + fangraphsPitchers
 //find matches--add fangraphs playerid to TempPlayer--pop match from appropriate array
 for p in tempPlayers {
     guard let matchID: String = p.findFGMatch(players: fangraphsPlayers).fgid else {
@@ -36,10 +36,11 @@ for p in tempPlayers {
 ////load Savant Pitchers
 //var savantPitchers: [SavantPlayer] = io.createSavantPitchers(from: FileManager.urlSavantPit)
 //combine pos groups into players mega group
-var savantPlayers: [SavantPlayer] = io.createSavantPlayers(from: FileManager.urlSavant)
+var savantPlayers: [TPSavantPlayer] = io.createSavantPlayers(from: FileManager.urlSavant)
 //find matches--add fangraphs playerid to TempPlayer--pop match from appropriate array
 for p in tempPlayers {
     guard let matchID: String = p.findSavantMatch(players: savantPlayers).idSavant else {
+        
         // if the player exists on ESPN but not on FG projections, the player needs to be shed.
         tempPlayers.removeAll(where: {$0.idESPN == p.idESPN})
         print("removed \(p._name) from ESPN Universe for non-existence Savant Universe")

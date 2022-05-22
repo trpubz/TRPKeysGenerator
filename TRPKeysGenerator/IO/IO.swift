@@ -14,7 +14,7 @@ class IO {
         $0.delimiters.row = "\n"
     }
     
-    func writeKeys(keys: [TempPlayer]) {
+    func writeKeys(keys: [TPTempPlayer]) {
         let encoder: JSONEncoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
         do {
@@ -27,14 +27,14 @@ class IO {
 
 // MARK: - Load FG
 extension IO {
-    func createFGHitters(from url: URL) -> [FangraphsPlayer] {
+    func createFGHitters(from url: URL) -> [TPFangraphsPlayer] {
         do {
-            return try decoder.decode([FangraphsPlayer].self, from: url)
+            return try decoder.decode([TPFangraphsPlayer].self, from: url)
         } catch { fatalError("createFGHitters \(error)")}
     }
-    func createFGPitchers(from url: URL) -> [FangraphsPlayer] {
+    func createFGPitchers(from url: URL) -> [TPFangraphsPlayer] {
         do {
-            return try decoder.decode([FangraphsPlayer].self, from: url)
+            return try decoder.decode([TPFangraphsPlayer].self, from: url)
         } catch { fatalError("createFGPitchers \(error)")}
     }
 }
@@ -52,10 +52,10 @@ extension IO {
 //        } catch { fatalError("createSavantPitchers \(error)")}
 //    }
     
-    func createSavantPlayers(from url: URL) -> [SavantPlayer] {
-        self.decoder.delimiters.row = "\r\n"
+    func createSavantPlayers(from url: URL) -> [TPSavantPlayer] {
+//        self.decoder.delimiters.row = "\r\n"
         do {
-            return try decoder.decode([SavantPlayer].self, from: url)
+            return try decoder.decode([TPSavantPlayer].self, from: url)
         } catch { fatalError("createSavantPitchers \(error)")}
     }
 }
@@ -66,10 +66,10 @@ extension IO {
     ///
     /// - Returns: an array of parsed Player objects
     ///
-    func loadESPNPlayers() -> [TempPlayer] {
+    func loadESPNPlayers() -> [TPTempPlayer] {
         let jDecoder = JSONDecoder()
         do {
-            return try jDecoder.decode([TempPlayer].self, from: .init(contentsOf: FileManager.urlESPNPlayerData))
+            return try jDecoder.decode([TPTempPlayer].self, from: .init(contentsOf: FileManager.urlESPNPlayerData))
         } catch { fatalError("error with loadESPNPlayers \(error)") }
     }
 }

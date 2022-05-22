@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3978E6A283895950054CF76 /* Savant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3978E69283895950054CF76 /* Savant.swift */; };
+		25B07F16283A9D4300F45BD3 /* ExternalPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B07F15283A9D4300F45BD3 /* ExternalPlayers.swift */; };
 		B3C44F7227EE260D00461EE0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F7127EE260D00461EE0 /* main.swift */; };
 		B3C44F7C27EE607200461EE0 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = B3C44F7B27EE607200461EE0 /* CodableCSV */; };
 		B3C44F8927EE64C400461EE0 /* IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8827EE64C400461EE0 /* IO.swift */; };
-		B3C44F8C27EE654A00461EE0 /* Fangraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8B27EE654A00461EE0 /* Fangraphs.swift */; };
 		B3C44F8E27EE656C00461EE0 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8D27EE656C00461EE0 /* Teams.swift */; };
 		B3C44F9027EE659A00461EE0 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8F27EE659A00461EE0 /* FileManager.swift */; };
-		B3C44F9227EE65D800461EE0 /* TempPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F9127EE65D800461EE0 /* TempPlayer.swift */; };
+		B3C44F9227EE65D800461EE0 /* TPTempPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F9127EE65D800461EE0 /* TPTempPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,15 +31,14 @@
 /* Begin PBXFileReference section */
 		25AC51042803ED9D00FE0EC6 /* atcPitchers.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = atcPitchers.csv; sourceTree = "<group>"; };
 		25AC51052803ED9D00FE0EC6 /* atcHitters.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = atcHitters.csv; sourceTree = "<group>"; };
-		B3978E69283895950054CF76 /* Savant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Savant.swift; sourceTree = "<group>"; };
+		25B07F15283A9D4300F45BD3 /* ExternalPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalPlayers.swift; sourceTree = "<group>"; };
 		B3978E6D283A07120054CF76 /* PLAYERIDMAP.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = PLAYERIDMAP.csv; sourceTree = "<group>"; };
 		B3C44F6E27EE260D00461EE0 /* TRPKeysGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TRPKeysGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C44F7127EE260D00461EE0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B3C44F8827EE64C400461EE0 /* IO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IO.swift; sourceTree = "<group>"; };
-		B3C44F8B27EE654A00461EE0 /* Fangraphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fangraphs.swift; sourceTree = "<group>"; };
 		B3C44F8D27EE656C00461EE0 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		B3C44F8F27EE659A00461EE0 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
-		B3C44F9127EE65D800461EE0 /* TempPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempPlayer.swift; sourceTree = "<group>"; };
+		B3C44F9127EE65D800461EE0 /* TPTempPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPTempPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +102,9 @@
 		B3C44F8A27EE653F00461EE0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B3C44F8B27EE654A00461EE0 /* Fangraphs.swift */,
 				B3C44F8D27EE656C00461EE0 /* Teams.swift */,
-				B3C44F9127EE65D800461EE0 /* TempPlayer.swift */,
-				B3978E69283895950054CF76 /* Savant.swift */,
+				B3C44F9127EE65D800461EE0 /* TPTempPlayer.swift */,
+				25B07F15283A9D4300F45BD3 /* ExternalPlayers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,13 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3978E6A283895950054CF76 /* Savant.swift in Sources */,
 				B3C44F9027EE659A00461EE0 /* FileManager.swift in Sources */,
 				B3C44F8E27EE656C00461EE0 /* Teams.swift in Sources */,
-				B3C44F9227EE65D800461EE0 /* TempPlayer.swift in Sources */,
+				25B07F16283A9D4300F45BD3 /* ExternalPlayers.swift in Sources */,
+				B3C44F9227EE65D800461EE0 /* TPTempPlayer.swift in Sources */,
 				B3C44F7227EE260D00461EE0 /* main.swift in Sources */,
 				B3C44F8927EE64C400461EE0 /* IO.swift in Sources */,
-				B3C44F8C27EE654A00461EE0 /* Fangraphs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
