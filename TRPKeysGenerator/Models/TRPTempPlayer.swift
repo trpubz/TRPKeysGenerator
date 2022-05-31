@@ -8,7 +8,7 @@
 import Foundation
 import AppKit
 
-class TPTempPlayer: Codable {
+class TRPTempPlayer: Codable {
     let _name: String
     let idESPN: String
     private var _idFangraphs: String? = nil
@@ -36,11 +36,11 @@ class TPTempPlayer: Codable {
     let pos: String
 }
 
-extension TPTempPlayer {
+extension TRPTempPlayer {
     /// Finds a FG match against self and sets the idFangraphs property if present
     /// - parameter players: Takes an array of FangraphsPlayer s
     /// - returns: a tuple of an optional string representing the player's Fangraphs playerid and/or self
-    func findFGMatch(players: [TPFangraphsPlayer]) -> (fgid: String?, plyr: TPTempPlayer?) {
+    func findFGMatch(players: [TPFangraphsPlayer]) -> (fgid: String?, plyr: TRPTempPlayer?) {
         // Filter matches on last name first; will sometimes find multiple matches
         var matches: [TPFangraphsPlayer] = findTPMatchesLastName(players: players) as! [TPFangraphsPlayer]
         if matches.isEmpty {
@@ -72,7 +72,7 @@ extension TPTempPlayer {
     /// Finds a Savant match against self and sets the idSavant property if present
     /// - parameter players: Takes an array of SavantPlayer s
     /// - returns: a tuple of an optional string representing the player's Savant playerid and/or self
-    func findSavantMatch(players: [TPSavantPlayer]) -> (idSavant: String?, plyr: TPTempPlayer?) {
+    func findSavantMatch(players: [TPSavantPlayer]) -> (idSavant: String?, plyr: TRPTempPlayer?) {
         // Filter matches on last name first; will sometimes find multiple matches
         var matches: [TPSavantPlayer] = findTPMatchesLastName(players: players) as! [TPSavantPlayer]
         if matches.isEmpty {
@@ -106,7 +106,7 @@ extension TPTempPlayer {
     }
 }
 
-extension TPTempPlayer {
+extension TRPTempPlayer {
     
     private func findTPMatchesLastName(players: [TPExtPlayer]) -> [TPExtPlayer] {
         return players.filter({$0.lastName == self.lastName})
@@ -118,7 +118,7 @@ extension TPTempPlayer {
     
 }
 
-extension TPTempPlayer {
+extension TRPTempPlayer {
     private enum CodingKeys: String, CodingKey {
         case idESPN, _name, firstName, lastName, suffix, tm, pos
         case _idFangraphs = "idFangraphs"

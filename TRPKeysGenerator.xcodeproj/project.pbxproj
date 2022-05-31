@@ -13,7 +13,7 @@
 		B3C44F8927EE64C400461EE0 /* IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8827EE64C400461EE0 /* IO.swift */; };
 		B3C44F8E27EE656C00461EE0 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8D27EE656C00461EE0 /* Teams.swift */; };
 		B3C44F9027EE659A00461EE0 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F8F27EE659A00461EE0 /* FileManager.swift */; };
-		B3C44F9227EE65D800461EE0 /* TPTempPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F9127EE65D800461EE0 /* TPTempPlayer.swift */; };
+		B3C44F9227EE65D800461EE0 /* TRPTempPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C44F9127EE65D800461EE0 /* TRPTempPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +38,7 @@
 		B3C44F8827EE64C400461EE0 /* IO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IO.swift; sourceTree = "<group>"; };
 		B3C44F8D27EE656C00461EE0 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		B3C44F8F27EE659A00461EE0 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
-		B3C44F9127EE65D800461EE0 /* TPTempPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPTempPlayer.swift; sourceTree = "<group>"; };
+		B3C44F9127EE65D800461EE0 /* TRPTempPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRPTempPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				B3C44F8D27EE656C00461EE0 /* Teams.swift */,
-				B3C44F9127EE65D800461EE0 /* TPTempPlayer.swift */,
+				B3C44F9127EE65D800461EE0 /* TRPTempPlayer.swift */,
 				25B07F15283A9D4300F45BD3 /* ExternalPlayers.swift */,
 			);
 			path = Models;
@@ -176,7 +176,7 @@
 				B3C44F9027EE659A00461EE0 /* FileManager.swift in Sources */,
 				B3C44F8E27EE656C00461EE0 /* Teams.swift in Sources */,
 				25B07F16283A9D4300F45BD3 /* ExternalPlayers.swift in Sources */,
-				B3C44F9227EE65D800461EE0 /* TPTempPlayer.swift in Sources */,
+				B3C44F9227EE65D800461EE0 /* TRPTempPlayer.swift in Sources */,
 				B3C44F7227EE260D00461EE0 /* main.swift in Sources */,
 				B3C44F8927EE64C400461EE0 /* IO.swift in Sources */,
 			);

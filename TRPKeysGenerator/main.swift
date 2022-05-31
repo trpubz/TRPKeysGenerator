@@ -10,7 +10,7 @@ import Foundation
 let io = IO()
 
 //load ESPN json players
-var tempPlayers: [TPTempPlayer] = io.loadESPNPlayers()
+var tempPlayers: [TRPTempPlayer] = io.loadESPNPlayers()
 // -MARK: FG
     //load FG Hitters
 var fangraphsHitters: [TPFangraphsPlayer] = io.createFGHitters(from: FileManager.urlSteamerrBat)

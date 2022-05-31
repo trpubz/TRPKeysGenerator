@@ -14,7 +14,7 @@ class IO {
         $0.delimiters.row = "\n"
     }
     
-    func writeKeys(keys: [TPTempPlayer]) {
+    func writeKeys(keys: [TRPTempPlayer]) {
         let encoder: JSONEncoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
         do {
@@ -66,10 +66,10 @@ extension IO {
     ///
     /// - Returns: an array of parsed Player objects
     ///
-    func loadESPNPlayers() -> [TPTempPlayer] {
+    func loadESPNPlayers() -> [TRPTempPlayer] {
         let jDecoder = JSONDecoder()
         do {
-            return try jDecoder.decode([TPTempPlayer].self, from: .init(contentsOf: FileManager.urlESPNPlayerData))
+            return try jDecoder.decode([TRPTempPlayer].self, from: .init(contentsOf: FileManager.urlESPNPlayerData))
         } catch { fatalError("error with loadESPNPlayers \(error)") }
     }
 }
