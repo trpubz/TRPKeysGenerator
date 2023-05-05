@@ -3,7 +3,7 @@ Primary &amp; Foregin Key Generator that maps ESPN Player IDs to Fangraphs Playe
 To be run after generating an ESPN Players json file for top eligible players and before generating TRProjections.
 
 ## Dependancies
-1. Generate ESPN Players JSON file from [this repo](https://github.com/trpubz/ESPN_FantasyPlayerList)
+1. Generate ESPN Players JSON file from [ESPN_FantasyPlayerList](https://github.com/trpubz/ESPN_FantasyPlayerList)
 2. Retrieve Fangraphs ATC projections and remove vertical divider from .csv [manual process]
 
 ## Outputs
